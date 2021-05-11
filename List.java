@@ -3,6 +3,9 @@ import java.util.Map;
 
 
 public class List {
+    //
+    // comment?
+
     private int courseNum;
     private int listID;
     private String teacherDemands;
@@ -11,7 +14,7 @@ public class List {
 
     private int teacherNum;
     private int completeFlag;
-    private Map<String, Teacher> teacherInfo;
+    private Map<String, String> teacherInfo;
 
     //构造函数
     public List(int courseNum, String teacherDemands, int listID, int maxNum) {
@@ -19,8 +22,7 @@ public class List {
         this.teacherDemands = teacherDemands;
         this.listID = listID;
         this.maxNum = maxNum;
-        teacherInfo = new HashMap<>();
-
+        teacherInfo = new HashMap<String, Teacher>();
     }
 
     //调用函数
@@ -32,11 +34,13 @@ public class List {
         return completeFlag;
     }
 
-        /*teacherInfo add & remove
-        teacherNum ++,--
-        judge completeFlag
-        检测teacherID == PTT.teacherID
-        输入or直接读取: */
+    /**
+     * teacherInfo add & remove
+     * teacherNum ++,--
+     * judge completeFlag
+     * 检测teacherID == PTT.teacherID
+     * 输入or直接读取:
+     */
     public void addTeacher(String teacherID, Teacher PTT) {  
         if (completeFlag == 0 && teacherID.equals(PTT.getID())) {
             //是否覆盖要询问;
