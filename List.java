@@ -16,7 +16,7 @@ public class List {
     private int completeFlag;
     private Map<String, String> teacherInfo;
 
-    //构造函数
+    // 构造函数  commit test
     public List(int courseNum, String teacherDemands, int listID, int maxNum) {
         this.courseNum = courseNum;
         this.teacherDemands = teacherDemands;
@@ -25,7 +25,7 @@ public class List {
         teacherInfo = new HashMap<String, Teacher>();
     }
 
-    //调用函数
+    // 调用函数
     public int getTeacherNum() {
         return teacherNum;
     }
@@ -77,6 +77,10 @@ public class List {
             String name = teacherInfo.get(teacherID).getname();
             System.out.println(teacherID + " = " + name);
         }
+    }
+
+    public static void main(String[] args) {
+        // rename
     }
 
 }
