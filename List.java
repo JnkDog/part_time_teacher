@@ -3,8 +3,6 @@ import java.util.Map;
 
 
 public class List {
-    //
-    // comment?
 
     private int courseNum;
     private int listID;
@@ -16,7 +14,7 @@ public class List {
     private int completeFlag;
     private Map<String, String> teacherInfo;
 
-    // 构造函数  commit test
+    // 构造函数
     public List(int courseNum, String teacherDemands, int listID, int maxNum) {
         this.courseNum = courseNum;
         this.teacherDemands = teacherDemands;
@@ -43,12 +41,12 @@ public class List {
      */
     public void addTeacher(String teacherID, Teacher PTT) {  
         if (completeFlag == 0 && teacherID.equals(PTT.getID())) {
-            //是否覆盖要询问;
-            /*if teacherInfo.contains(teacherID) {
-                已有这个教师，请问是否要更新他的数据；
-                scanf（yes or no）；
-                then；
-            }*/
+            /** if teacherInfo.contains(teacherID) {
+             * 已有这个教师，请问是否要更新他的数据；
+             * scanf (yes or no);
+             * then...
+             * }
+             */
             teacherInfo.put(teacherID, PTT);
             teacherNum++;
             if (teacherNum == maxNum) {
