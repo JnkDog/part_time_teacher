@@ -13,9 +13,16 @@ public class Main {
                 case "A":
                     // get Course requirement info
                     break;
-                case  "B":
+                case "B":
                     // get training info
                     break;
+                case "I":
+                    // TrainingModel.add()
+                    // Training....
+                    // input 一行输入 然后 save一行
+                    // Model string to model
+                    // interface
+                    // Model --> save()
                 case "E":
                     // TBD test
                     APPConsole.writeLine("**************     Bye Bye       **************");

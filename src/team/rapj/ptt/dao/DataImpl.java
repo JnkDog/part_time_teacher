@@ -9,16 +9,14 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-class DataImpl extends BaseConnection implements OperationInDAO {
-    @Override
-    public <T> List<T> loadData(Class clazz) throws Exception {
+class DataImpl extends BaseConnection {
+    public static <T> List<T> loadData(Class clazz) throws Exception {
         String readContent = readContent();
         JSONObject jo = JSONObject.parseObject(readContent);
         String filter = getClassName(clazz);
         JSONArray filterJArray = (JSONArray) jo.get(filter);
 
         // Check if the corresponding json data is available in the file
-
         if (filterJArray.size() == 0) {
             return new ArrayList<>();
         }
@@ -28,8 +26,7 @@ class DataImpl extends BaseConnection implements OperationInDAO {
         return res;
     }
 
-    @Override
-    public <T> void saveData(List<T> addModels) throws Exception {
+    public static <T> void saveData(List<T> addModels) throws Exception {
         if (addModels.size() == 0) {
             return;
         }
