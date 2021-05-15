@@ -1,19 +1,88 @@
 package team.rapj.ptt.dao;
 
 import com.alibaba.fastjson.JSON;
-import team.rapj.ptt.training.Training;
-import team.rapj.ptt.training.TrainingDetail;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.util.Date;
+
+import java.util.ArrayList;
 import java.util.List;
 
 class DataImpl extends BaseConnection implements OperationInDAO {
-
-    // 需要什么样的格式
     @Override
-    public List<Training> loadAllTraining() throws IOException {
+    public <T> List<T> loadData(Class clazz) throws Exception {
+        String readContent = readContent();
+        JSONObject jo = JSONObject.parseObject(readContent);
+        String filter = getClassName(clazz);
+        JSONArray filterJArray = (JSONArray) jo.get(filter);
+
+        // Check if the corresponding json data is available in the file
+
+        if (filterJArray.size() == 0) {
+            return new ArrayList<>();
+        }
+
+        List<T> res = JSONObject.parseArray(filterJArray.toJSONString(), clazz);
+
+        return res;
+    }
+
+    @Override
+    public <T> void saveData(List<T> addModels) throws Exception {
+        if (addModels.size() == 0) {
+            return;
+        }
+
+        String temp = readContent();
+        JSONObject jo = (JSONObject) JSONObject.parse(temp);
+        JSONArray addJArray = JSONArray.parseArray(JSON.toJSONString(addModels));
+        String filter = getClassName(addModels.get(0).getClass());
+
+        /**
+         * For storing files, additional json operations are required.
+         *
+         * If the map don't have the filter key, it needs add the key.
+         * If the key exists, add to the original JSONArray.
+         */
+        if (!jo.containsKey(filter)) {
+            jo.put(filter,addJArray);
+        } else {
+            for (Object one : addJArray) {
+                ((JSONArray) jo.get(filter)).add(one);
+            }
+        }
+
+        temp = JSON.toJSONString(jo);
+
+        saveContent(temp);
+    }
+
+//
+//    public String test() throws Exception {
+//        String resultString = readContent();
+//        // need json parse
+//        RequirementModel requirementModel = new RequirementModel();
+//
+//        JSONObject o = (JSONObject) JSONObject.parse(resultString);
+//        String value = o.get("data").toString();
+//
+//        List<? extends RequirementModel> re = JSON.parseArray(value, requirementModel.getClass());
+//
+//        for (RequirementModel r : re) {
+//            System.out.println(r.getNumber());
+//        }
+//
+//        return resultString;
+//    }
+
+    /**
+     * This function to read the JSON string from the file
+     *
+     * @return resultString String
+     * @throws IOException
+     */
+    private static String readContent() throws IOException {
         File loadFile = BaseConnection.connect();
         FileReader fileReader = new FileReader(loadFile);
         Reader reader = new InputStreamReader(new FileInputStream(loadFile), "utf-8");
@@ -28,16 +97,17 @@ class DataImpl extends BaseConnection implements OperationInDAO {
         reader.close();
         String resultString = sb.toString();
 
-        // need json parse
-
-        return null;
+        return resultString;
     }
 
-    @Override
-    public void saveAllTraining() throws IOException {
+    /**
+     * This function is to write JSON string to the file.
+     *
+     * @param content String
+     * @throws IOException
+     */
+    private static void saveContent(String content) throws IOException {
         File saveFile = BaseConnection.connect();
-        TrainingDetail td = new TrainingDetail(new Date(), "Room E", "test", "test value");
-        String content = JSON.toJSONString(td);
 
         if (saveFile.exists()) {
             saveFile.delete();
@@ -50,28 +120,14 @@ class DataImpl extends BaseConnection implements OperationInDAO {
         writer.close();
     }
 
-    public String test() throws Exception {
-        File loadFile = BaseConnection.connect();
-        FileReader fileReader = new FileReader(loadFile);
-        Reader reader = new InputStreamReader(new FileInputStream(loadFile), "utf-8");
+    private static String getClassName(Class clazz) {
+        int beginIdx = clazz.getPackageName().length() + 1;
+        int endIdx = clazz.getTypeName().length();
+        String filter = clazz.getTypeName().substring(beginIdx, endIdx);
 
-        int ch = 0;
-        StringBuilder sb = new StringBuilder();
-        while ((ch = reader.read()) != -1) {
-            sb.append((char) ch);
-        }
-
-        fileReader.close();
-        reader.close();
-        String resultString = sb.toString();
-
-        // need json parse
-
-        return resultString;
+        return filter;
     }
 
     public static void main(String[] args) throws Exception {
-        DataImpl d1 = new DataImpl();
-        d1.saveAllTraining();
     }
 }

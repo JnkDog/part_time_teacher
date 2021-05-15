@@ -12,18 +12,18 @@ import java.util.List;
  */
 public interface OperationInDAO {
     /**
-     * load all training data
+     * load data
      *
      * @throws Exception
-     * @return List<Training>
+     * @return List<T>
      */
-    List<Training> loadAllTraining() throws Exception;
+    <T> List<T> loadData(Class clazz) throws Exception;
 
     /**
-     * save all training data
+     * save data
      *
      * @throws Exception
-     * @return int save flag
+     * @return void
      */
-    void saveAllTraining() throws Exception;
+    <T> void saveData(List<T> addModels) throws Exception;
 }
