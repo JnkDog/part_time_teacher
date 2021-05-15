@@ -9,6 +9,11 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Specific implementation of json data storage
+ *
+ * @author Kuihong Chen
+ */
 class DataImpl extends BaseConnection {
     public static <T> List<T> loadData(Class clazz) throws Exception {
         String readContent = readContent();

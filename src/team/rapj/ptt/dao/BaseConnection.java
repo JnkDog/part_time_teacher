@@ -5,7 +5,7 @@ import java.io.File;
 /**
  * Open the file to save or load data
  *
- * @author fzzfs
+ * @author Kuihong Chen
  */
 public class BaseConnection {
 //    private static String SAVE_PATH = "./";
