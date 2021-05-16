@@ -1,8 +1,9 @@
+package src.team.rapj.ptt.model;
 import java.util.HashMap;
 import java.util.Map;
 
 
-public class List {
+public class PTTList {
 
     private int courseNum;
     private int listID;
@@ -12,15 +13,16 @@ public class List {
 
     private int teacherNum;
     private int completeFlag;
-    private Map<String, String> teacherInfo;
+    private Map<String, PTTModel> teacherInfo;
 
     // 构造函数
-    public List(int courseNum, String teacherDemands, int listID, int maxNum) {
+    PTTList(int courseNum, String teacherDemands, int listID, int max) {
         this.courseNum = courseNum;
         this.teacherDemands = teacherDemands;
         this.listID = listID;
-        this.maxNum = maxNum;
-        teacherInfo = new HashMap<String, Teacher>();
+        this.maxNum = max;
+        this.completeFlag = 0;
+        teacherInfo = new HashMap<String, PTTModel>();
     }
 
     // 调用函数
@@ -39,7 +41,7 @@ public class List {
      * 检测teacherID == PTT.teacherID
      * 输入or直接读取:
      */
-    public void addTeacher(String teacherID, Teacher PTT) {  
+    public void addTeacher(String teacherID, PTTModel PTT) {  
         if (completeFlag == 0 && teacherID.equals(PTT.getID())) {
             /** if teacherInfo.contains(teacherID) {
              * 已有这个教师，请问是否要更新他的数据；

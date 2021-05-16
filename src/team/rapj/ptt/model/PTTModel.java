@@ -1,8 +1,9 @@
+package src.team.rapj.ptt.model;
 import java.util.Date;
 
-public class Teacher {
+public class PTTModel {
     private String name;
-    private Date dateInfo;
+    private Date dateInfo; // 调用博哥时间结构
     private String teacherID;
     
     public String getID() {
