@@ -26,6 +26,8 @@ public class Main {
                     // console输入样式
                     // 不要都写在这一个操作符下面
                     // 自己另外case操作符号！！！
+                    //  a, bbb,  bbbb,  String.split(",")  ->  String[] for a-> name  bbb -> trainingList
+//                     new Training(name, trainingList)  -> save
                     APPConsole.writeLine("Input Format");
                     // 这里的scanner是用来读用户输入数据的字符串，别和上面那个读操作的scanner搞混了
                     Scanner scanner1 = new Scanner(System.in);
@@ -35,7 +37,7 @@ public class Main {
                     //  ---- 需要完成的工作  -----
                     // 根据读入的字符串转化成对应的model～，然后塞入我的保存api
                     // 如果无BUG 估计就好了
-
+                    // t.split(",");
                     break;
                 case "E":
                     // TBD test

@@ -36,8 +36,8 @@ class DataImpl extends BaseConnection {
             return;
         }
 
-        String temp = readContent();
-        JSONObject jo = (JSONObject) JSONObject.parse(temp);
+        String tmp = readContent();
+        JSONObject jo = (JSONObject) JSONObject.parse(tmp);
         JSONArray addJArray = JSONArray.parseArray(JSON.toJSONString(addModels));
         String filter = getClassName(addModels.get(0).getClass());
 
@@ -55,9 +55,9 @@ class DataImpl extends BaseConnection {
             }
         }
 
-        temp = JSON.toJSONString(jo);
+        tmp = JSON.toJSONString(jo);
 
-        saveContent(temp);
+        saveContent(tmp);
     }
 
 //
