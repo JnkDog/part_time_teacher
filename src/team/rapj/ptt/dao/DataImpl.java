@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author Kuihong Chen
  */
-class DataImpl extends BaseConnection {
+public class DataImpl extends BaseConnection {
     public static <T> List<T> loadData(Class clazz) throws Exception {
         String readContent = readContent();
         JSONObject jo = JSONObject.parseObject(readContent);
