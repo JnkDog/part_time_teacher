@@ -1,9 +1,10 @@
 import team.rapj.ptt.console.APPConsole;
+import team.rapj.ptt.model.RequirementModel;
 
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         APPConsole.welcome();
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -12,6 +13,7 @@ public class Main {
             switch (opt) {
                 case "A":
                     // get Course requirement info
+                    RequirementModel.input();
                     break;
                 case "B":
                     // get training info
