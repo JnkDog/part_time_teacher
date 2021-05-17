@@ -20,7 +20,7 @@ public class PTTListModel {
         this.teacherDemands = teacherDemands;
         this.listID = listID;
         this.maxNum = max;
-        this.completeFlag = 0;
+        //this.completeFlag = 0;
         teacherInfo = new ArrayList();
     }
 
@@ -29,42 +29,48 @@ public class PTTListModel {
         return teacherNum;
     }
 
-    public int getCompleteFlag() {
-        return completeFlag;
-    }
+    // public int getCompleteFlag() {
+    //     return completeFlag;
+    // }
 
     public void addPTT() {  
-        if (completeFlag == 0 ) {
-            if (teacherInfor.isconstrain(PTT)) {
-                APPConsole.writeLine("This teacher is already in the list!");
-                // add overwrite to improve!
+        if (teacherNum == maxNum) {
+            APPConsole.writeLine("The list has been completed! Your operation is invalid!");
+        }
+
+        while (teacherNum < maxNum && input == 'Y') {
+            // input info
+            PTTModel temp = new PTTModel.input();
+            // judge
+            if (teacherInfor.isconstrain(temp)) {
+                    APPConsole.writeLine("This teacher is already in the list!");
+                    // add overwrite to improve!
             } else {
-                // input info
-                // 调用你的ptt的输入
-                
-                teacherInfo.add(PTT);
+                teacherInfo.add(temp);
                 teacherNum++;
             }
-            if (teacherNum == maxNum) {
-                completeFlag = 1;
-            } 
-        } else {
-            APPConsole.writeLine("The list has been completed! Your operation is invalid!");
+            // if (teacherNum == maxNum) {
+            //     completeFlag = 1;
+            // }      
         }
     }
 
     public void removePTT() {
-        if (teacherInfo.isconstrain(PTT)) {
-            teacherInfo.remove(PTT);
-            teacherNum--;
-            if (completeFlag == 1) {
-                completeFlag = 0;
+        while (teacherNum > 0) {
+            PTTModel temp = new PTTModel.input();
+            if (teacherInfo.isconstrain(temp)) {
+                teacherInfo.remove(temp);
+                teacherNum--;
+                // if (completeFlag == 1) {
+                //     completeFlag = 0;
+                // }
+                if (teacherNum == 0) {
+                    APPConsole.writeLine("The list is empty now!");
+                    break;
+                }
+            } else {
+                APPConsole.writeLine("There is no such PTT!");
             }
-            if (teacherNum == 0) {
-                APPConsole.writeLine("The list is empty now!");
-            }
-        } else {
-            APPConsole.writeLine("There is no such PTT!");
         }
     }
     
