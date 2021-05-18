@@ -1,3 +1,4 @@
+package team.rapj.ptt.model;
 
 
 import team.rapj.ptt.console.APPConsole;
