@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 import team.rapj.ptt.console.APPConsole;
+import team.rapj.ptt.model.PTTListModel;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -12,7 +13,7 @@ public class Main {
             switch (opt) {
                 case "A":
                     // get Course requirement info
-                    RequirementModel.input();
+                    // RequirementModel.input();
                     break;
                 case "B":
                     // get training info

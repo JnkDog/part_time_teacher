@@ -1,4 +1,4 @@
-
+package team.rapj.ptt.model;
 
 import team.rapj.ptt.console.APPConsole;
 import team.rapj.ptt.dao.DataImpl;

@@ -3,18 +3,21 @@ package team.rapj.ptt.model;
 
 import team.rapj.ptt.console.APPConsole;
 import team.rapj.ptt.dao.DataImpl;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class PTTModel {
     private String name;
-    private int teacherID;
+    private String teacherID;
+    private List<String> trainingList;
 
-    PTTModel(String n, int id) {
+    PTTModel(String n, String id) {
         this.name = n;
         this.teacherID = id;
     }
     
-    public int getID() {
+    public String getID() {
         return teacherID;
     }
 
@@ -27,7 +30,7 @@ public class PTTModel {
         String t = scanner1.next();
         String[] input = t.split(",");
         String name = input [0];
-        int teacherID = Integer.parseInt (input[1]);
+        String teacherID = input[1];
 
         PTTModel ptt = new PTTModel(name, teacherID);
         return ptt;  

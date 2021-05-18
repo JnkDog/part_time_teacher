@@ -1,4 +1,4 @@
-
+package team.rapj.ptt.model;
 
 import java.util.ArrayList;
 import java.util.List;
