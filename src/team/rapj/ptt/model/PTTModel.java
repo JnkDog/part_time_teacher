@@ -1,5 +1,6 @@
 package team.rapj.ptt.model;
 
+
 import team.rapj.ptt.console.APPConsole;
 import team.rapj.ptt.dao.DataImpl;
 import java.util.Scanner;
@@ -7,8 +8,13 @@ import java.util.Scanner;
 public class PTTModel {
     private String name;
     private int teacherID;
+
+    PTTModel(String n, int id) {
+        this.name = n;
+        this.teacherID = id;
+    }
     
-    public String getID() {
+    public int getID() {
         return teacherID;
     }
 
@@ -16,18 +22,16 @@ public class PTTModel {
         return name;
     }
 
-    public static void input() throws Exception {
-
+    public static PTTModel input() throws Exception {
         Scanner scanner1 = new Scanner(System.in);
         String t = scanner1.next();
         String[] input = t.split(",");
-        this.name = input [0];
-        this.teacherID = Integer.parseInt (input [1]);
+        String name = input [0];
+        int teacherID = Integer.parseInt (input[1]);
+
+        PTTModel ptt = new PTTModel(name, teacherID);
+        return ptt;  
     }
 
-    public static void output(){
-
-        System.out.print(input [0] + " " + input [1] );
-
-    }
+    public void output(){ System.out.print(name + " " + teacherID); }
 }

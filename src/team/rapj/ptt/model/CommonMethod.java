@@ -1,4 +1,4 @@
-package team.rapj.ptt.model;
+
 
 /**
  * CommonMethod that every model needs implementation
