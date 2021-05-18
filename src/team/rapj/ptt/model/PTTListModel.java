@@ -78,8 +78,8 @@ public class PTTListModel {
 
     public static void input() throws Exception {
         APPConsole.writeLine("input course number, teacher Demands, listID, max number!");
-        Scanner scanner1 = new Scanner(System.in);
-        String t = scanner1.next();
+        Scanner s = new Scanner(System.in);
+        String t = s.next();
         String[] input = t.split(",");
         int a = Integer.parseInt(input[0]);
         int b = Integer.parseInt(input[1]);
@@ -87,19 +87,17 @@ public class PTTListModel {
 
         PTTListModel m = new PTTListModel(a, b, c);
         
+        APPConsole.writeLine("input teacher name, ID!");
         while (m.teacherNum < m.maxNum) {
-            // APPConsole.writeLine("input teacher name, teacherID.");
-            // String d = scanner1.next();
-            // String[] info = d.split(",");
-            // int id = Integer.parseInt(info[1]);
-            // PTTModel temp = new PTTModel(info[0], id);
-            // lista.addPTT(temp);
+            // 判断是否结束输入跳出循环
+            
             PTTModel temp = PTTModel.input();
             m.addPTT(temp);
         }
         List<PTTListModel> list = new ArrayList<>();
         list.add(m);
         DataImpl.saveData(list);
+        APPConsole.writeLine("YEAH!");
     }
     public static void main(String[] args) {
         // rename

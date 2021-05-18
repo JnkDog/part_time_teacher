@@ -1,7 +1,6 @@
-import team.rapj.ptt.console.APPConsole;
-import team.rapj.ptt.model.RequirementModel;
-
 import java.util.Scanner;
+
+import team.rapj.ptt.console.APPConsole;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -17,6 +16,7 @@ public class Main {
                     break;
                 case "B":
                     // get training info
+                    PTTListModel.input();
                     break;
                 case "I":
                     // TrainingModel.add()
