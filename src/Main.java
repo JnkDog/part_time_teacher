@@ -30,7 +30,14 @@ public class Main {
                     break;
                 case "B":
                     // get training info
-                    PTTListModel.input();
+                    
+                    break;
+                case "C":
+                    // 测试CourseModel
+                    APPConsole.writeLine("Input Format: CourseName, Requirement");
+                    String[] userInputC = APPConsole.splitUserInput();
+                    AbstractModel modelC = new CourseModel();
+                    modelC.saveData(userInputC);
                     break;
                 case "I":
                     // TrainingModel.add()
