@@ -30,6 +30,7 @@ public class Main {
                     break;
                 case "B":
                     // get training info
+<<<<<<< HEAD
                     
                     break;
                 case "C":
@@ -38,6 +39,12 @@ public class Main {
                     String[] userInputC = APPConsole.splitUserInput();
                     AbstractModel modelC = new CourseModel();
                     modelC.saveData(userInputC);
+=======
+                    APPConsole.writeLine("Input Format: Name, TeacherID, TrainingList");
+                    String[] userInputArray = APPConsole.splitUserInput();
+                    AbstractModel model = new PTTModel();
+                    model.saveData(userInputArray);
+>>>>>>> 9753fecc59e346dfc266249108f0bfbfe78f5c0a
                     break;
                 case "I":
                     // TrainingModel.add()
