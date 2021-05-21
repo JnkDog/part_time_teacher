@@ -30,7 +30,10 @@ public class Main {
                     break;
                 case "B":
                     // get training info
-                    PTTListModel.input();
+                    APPConsole.writeLine("Input Format: Name, TeacherID, TrainingList");
+                    String[] userInputArray = APPConsole.splitUserInput();
+                    AbstractModel model = new PTTModel();
+                    model.saveData(userInputArray);
                     break;
                 case "I":
                     // TrainingModel.add()

@@ -3,18 +3,20 @@ package team.rapj.ptt.model;
 
 import team.rapj.ptt.console.APPConsole;
 import team.rapj.ptt.dao.DataImpl;
-
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class PTTModel {
+
+public class PTTModel extends AbstractModel<PTTModel> {
     private String name;
     private String teacherID;
     private List<String> trainingList;
 
-    PTTModel(String n, String id) {
+    PTTModel(String n, String id, List trainingList) {
         this.name = n;
         this.teacherID = id;
+        this.trainingList = new ArrayList<>();
+        this.trainingList = trainingList;
     }
     
     public String getID() {
@@ -25,16 +27,21 @@ public class PTTModel {
         return name;
     }
 
-    public static PTTModel input() throws Exception {
-        Scanner scanner1 = new Scanner(System.in);
-        String t = scanner1.next();
-        String[] input = t.split(",");
-        String name = input [0];
-        String teacherID = input[1];
-
-        PTTModel ptt = new PTTModel(name, teacherID);
+    public static PTTModel stringToModel(String[] userInputArray) {
+        List<String> list = new ArrayList<>();
+        for (int i = 2; i < userInputArray.length(); i++) {
+            list.add(userInputArray[i]);
+        }
+        PTTModel ptt = new PTTModel(userInputArray[0], userInputArray[1], list );
         return ptt;  
     }
 
-    public void output(){ System.out.print(name + " " + teacherID); }
+
+    public void output(){
+        System.out.println(userInputArray[0] + " " + userInputArray[1]);
+        for (int j = 0; j < list.size(); j++) {
+            System.out.println(list.get(j));
+        }
+
+    }
 }
