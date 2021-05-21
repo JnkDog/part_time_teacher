@@ -29,22 +29,18 @@ public class Main {
                     model.saveData(userInputArray);
                     break;
                 case "B":
-                    // get training info
-<<<<<<< HEAD
-                    
-                    break;
-                case "C":
-                    // 测试CourseModel
+                    // get training info// 测试CourseModel
                     APPConsole.writeLine("Input Format: CourseName, Requirement");
                     String[] userInputC = APPConsole.splitUserInput();
                     AbstractModel modelC = new CourseModel();
                     modelC.saveData(userInputC);
-=======
+                    
+                    break;
+                case "C":
                     APPConsole.writeLine("Input Format: Name, TeacherID, TrainingList");
                     String[] userInputArray = APPConsole.splitUserInput();
                     AbstractModel model = new PTTModel();
                     model.saveData(userInputArray);
->>>>>>> 9753fecc59e346dfc266249108f0bfbfe78f5c0a
                     break;
                 case "I":
                     // TrainingModel.add()
