@@ -1,19 +1,29 @@
 package team.rapj.ptt.console;
 
+import java.util.Scanner;
+
 /**
- * Singleton model. Make sure that one app has one console.
+ * Printing message to console.
  *
  * @author Kuihong Chen
  */
 public class APPConsole {
-    private static APPConsole appConsole = new APPConsole();
-
     public static void writeLine(String str) {
         System.out.println(str);
     }
 
-    public static void readLine(String str) {
+    public static String readLine() {
+        Scanner scanner = new Scanner(System.in);
+        String readLine = scanner.nextLine();
 
+        return readLine;
+    }
+
+    public static String[] splitUserInput() {
+        String tmp = readLine();
+        String[] stringArray = tmp.split(",");
+
+        return stringArray;
     }
 
     public static void welcome() {

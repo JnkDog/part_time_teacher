@@ -1,15 +1,17 @@
 package team.rapj.ptt.model;
 
-import team.rapj.ptt.console.APPConsole;
 import team.rapj.ptt.dao.DataImpl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class RequirementModel {
+public class RequirementModel extends AbstractModel<RequirementModel> {
     private String req;
     private int num;
+
+    public RequirementModel() {
+
+    }
 
     public RequirementModel(int a, String b) {
         num = a;
@@ -39,14 +41,30 @@ public class RequirementModel {
 
 
     public static void input() throws Exception {
-        APPConsole.writeLine("Input Format: Num, Requirement");
-        Scanner scanner1 = new Scanner(System.in);
-        String t = scanner1.next();
-        String[] input = t.split(",");
-        int a = Integer.parseInt(input[0]);
-        RequirementModel req = new RequirementModel(a,input[1]);
+//        APPConsole.writeLine("Input Format: Num, Requirement");
+//        Scanner scanner1 = new Scanner(System.in);
+//        String t = scanner1.next();
+//        String[] input = t.split(",");
+//        int a = Integer.parseInt(input[0]);
+//        RequirementModel req = new RequirementModel(a,input[1]);
+//        List<RequirementModel> list = new ArrayList<>();
+//        list.add(req);
+//        DataImpl.saveData(list);
+    }
+
+    @Override
+    public RequirementModel stringToModel(String[] userInputArray) {
+        int num = Integer.parseInt(userInputArray[0]);
+        RequirementModel req = new RequirementModel(num, userInputArray[1]);
+
+        return req;
+    }
+
+    @Override
+    public void saveData(String[] userInputArray) throws Exception {
+        RequirementModel model = stringToModel(userInputArray);
         List<RequirementModel> list = new ArrayList<>();
-        list.add(req);
+        list.add(model);
         DataImpl.saveData(list);
     }
 }

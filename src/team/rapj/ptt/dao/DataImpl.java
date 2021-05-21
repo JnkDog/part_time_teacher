@@ -60,24 +60,6 @@ public class DataImpl extends BaseConnection {
         saveContent(tmp);
     }
 
-//
-//    public String test() throws Exception {
-//        String resultString = readContent();
-//        // need json parse
-//        RequirementModel requirementModel = new RequirementModel();
-//
-//        JSONObject o = (JSONObject) JSONObject.parse(resultString);
-//        String value = o.get("data").toString();
-//
-//        List<? extends RequirementModel> re = JSON.parseArray(value, requirementModel.getClass());
-//
-//        for (RequirementModel r : re) {
-//            System.out.println(r.getNumber());
-//        }
-//
-//        return resultString;
-//    }
-
     /**
      * This function to read the JSON string from the file
      *
@@ -128,8 +110,5 @@ public class DataImpl extends BaseConnection {
         String filter = clazz.getTypeName().substring(beginIdx, endIdx);
 
         return filter;
-    }
-
-    public static void main(String[] args) throws Exception {
     }
 }

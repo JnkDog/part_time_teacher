@@ -1,8 +1,17 @@
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 import team.rapj.ptt.console.APPConsole;
+import team.rapj.ptt.model.AbstractModel;
+import team.rapj.ptt.model.CommonMethod;
 import team.rapj.ptt.model.PTTListModel;
+import team.rapj.ptt.model.RequirementModel;
 
+/**
+ * Main function
+ *
+ * @author Kuihong Chen
+ */
 public class Main {
     public static void main(String[] args) throws Exception {
         APPConsole.welcome();
@@ -14,6 +23,10 @@ public class Main {
                 case "A":
                     // get Course requirement info
                     // RequirementModel.input();
+                    APPConsole.writeLine("Input Format: Num, Requirement");
+                    String[] userInputArray = APPConsole.splitUserInput();
+                    AbstractModel model = new RequirementModel();
+                    model.saveData(userInputArray);
                     break;
                 case "B":
                     // get training info

@@ -5,13 +5,8 @@ package team.rapj.ptt.model;
  *
  * @author Kuihong Chen
  */
-public interface CommonMethod {
-    /**
-     * CommonMethod that every model needs implementation
-     *
-     * @param userInput String
-     * @return T
-     * @author Kuihong Chen
-     */
-    public <T> T stringToModel(String userInput);
+public interface CommonMethod<T> {
+
+
+    public T stringToModel(String[] userInputArray);
 }
