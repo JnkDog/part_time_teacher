@@ -26,8 +26,8 @@ public class Main {
 
                     break;
                 case "B":
-                    // get training info// 测试CourseModel
-                    APPConsole.writeLine("Input Format: CourseName, Number, Requirement");
+                    // input CourseModel
+                    APPConsole.writeLine("Input Format: CourseName, Teacher Number, Requirement");
                     String[] userInputC = APPConsole.splitUserInput();
                     AbstractModel modelC = new CourseModel();
                     modelC.saveData(userInputC);
@@ -43,6 +43,13 @@ public class Main {
                 case "D":
                     APPConsole.writeLine("Loading requirement data...");
                     RequirementModel.printData();
+                    APPConsole.writeLine("Finished");
+
+                    break;
+                case "F":
+                // read Course Data
+                    APPConsole.writeLine("loading course data...");
+                    CourseModel.printCourse();
                     APPConsole.writeLine("Finished");
 
                     break;
