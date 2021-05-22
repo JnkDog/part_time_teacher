@@ -1,11 +1,7 @@
-import java.lang.reflect.Array;
 import java.util.Scanner;
 
 import team.rapj.ptt.console.APPConsole;
-import team.rapj.ptt.model.AbstractModel;
-import team.rapj.ptt.model.CommonMethod;
-import team.rapj.ptt.model.PTTListModel;
-import team.rapj.ptt.model.RequirementModel;
+import team.rapj.ptt.model.*;
 
 /**
  * Main function
@@ -37,10 +33,10 @@ public class Main {
                     
                     break;
                 case "C":
-                    APPConsole.writeLine("Input Format: Name, TeacherID, TrainingList");
-                    String[] userInputArray = APPConsole.splitUserInput();
-                    AbstractModel model = new PTTModel();
-                    model.saveData(userInputArray);
+                    APPConsole.writeLine("Input Format: Name, TeacherID, ...TrainingList");
+                    String[] userInputArr = APPConsole.splitUserInput();
+                    AbstractModel modelPTT = new PTTModel();
+                    modelPTT.saveData(userInputArr);
                     break;
                 case "I":
                     // TrainingModel.add()

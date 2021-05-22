@@ -38,6 +38,25 @@ public class DataImpl extends BaseConnection {
 
         String tmp = readContent();
         JSONObject jo = (JSONObject) JSONObject.parse(tmp);
+
+        /**
+         * If firstly running app, the jo is null, need additional operations
+         * to save data into file.
+         */
+        if (jo == null) {
+            jo = new JSONObject();
+        }
+//        if (jo == null) {
+//            jo = new JSONObject();
+//            JSONArray addJArray = JSONArray.parseArray(JSON.toJSONString(addModels));
+//            String className = getClassName(addModels.get(0).getClass());
+//            jo.put(className, addJArray);
+//
+//            String saveString = JSONObject.toJSONString(jo);
+//            saveContent(saveString);
+//
+//            return;
+//        }
         JSONArray addJArray = JSONArray.parseArray(JSON.toJSONString(addModels));
         String filter = getClassName(addModels.get(0).getClass());
 
@@ -68,6 +87,11 @@ public class DataImpl extends BaseConnection {
      */
     private static String readContent() throws IOException {
         File loadFile = BaseConnection.connect();
+        // If first run the app, creating the file to save data.
+        if (!loadFile.exists()) {
+            loadFile.createNewFile();
+        }
+
         FileReader fileReader = new FileReader(loadFile);
         Reader reader = new InputStreamReader(new FileInputStream(loadFile), "utf-8");
 

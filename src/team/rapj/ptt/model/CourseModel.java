@@ -1,10 +1,13 @@
+package team.rapj.ptt.model;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import team.rapj.ptt.dao.DataImpl;
+import team.rapj.ptt.model.AbstractModel;
 
-public class CourseModel extends AbstractModel<CourseModel>{
+public class CourseModel extends AbstractModel<CourseModel> {
     private String courseName;
     private List<RequirementModel> reqList;
 
