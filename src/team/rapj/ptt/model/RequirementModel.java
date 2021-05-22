@@ -36,7 +36,7 @@ public class RequirementModel extends AbstractModel<RequirementModel> {
 
     public void print() {
         System.out.println("Need " + getNumber() + " teachers.");
-        System.out.println("Requirement: " + getRequirements().toString());
+        System.out.println("Requirements: " + getRequirements().toString());
     }
 
     @Override
