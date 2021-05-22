@@ -40,23 +40,13 @@ public class DataImpl extends BaseConnection {
         JSONObject jo = (JSONObject) JSONObject.parse(tmp);
 
         /**
-         * If firstly running app, the jo is null, need additional operations
+         * If firstly running app, the jo is null, which needs additional operations
          * to save data into file.
          */
         if (jo == null) {
             jo = new JSONObject();
         }
-//        if (jo == null) {
-//            jo = new JSONObject();
-//            JSONArray addJArray = JSONArray.parseArray(JSON.toJSONString(addModels));
-//            String className = getClassName(addModels.get(0).getClass());
-//            jo.put(className, addJArray);
-//
-//            String saveString = JSONObject.toJSONString(jo);
-//            saveContent(saveString);
-//
-//            return;
-//        }
+
         JSONArray addJArray = JSONArray.parseArray(JSON.toJSONString(addModels));
         String filter = getClassName(addModels.get(0).getClass());
 

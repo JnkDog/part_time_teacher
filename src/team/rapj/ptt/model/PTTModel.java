@@ -5,6 +5,9 @@ import team.rapj.ptt.dao.DataImpl;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author
+ */
 public class PTTModel extends AbstractModel<PTTModel>{
     private String name;
     private String teacherID;
@@ -19,12 +22,16 @@ public class PTTModel extends AbstractModel<PTTModel>{
         this.trainingList = trainingList;
     }
     
-    public String getID() {
+    public String getTeacherID() {
         return teacherID;
     }
 
     public String getName() {
         return name;
+    }
+
+    public List<String> getTrainingList() {
+        return trainingList;
     }
 
 //    public static PTTModel input() throws Exception {
