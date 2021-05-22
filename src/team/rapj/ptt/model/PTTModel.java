@@ -57,7 +57,13 @@ public class PTTModel extends AbstractModel<PTTModel>{
 //        return ptt;
 //    }
 
-    public void output(){ System.out.print(name + " " + teacherID); }
+    public void print(){
+        System.out.println(name + " " + teacherID);
+        for (int j = 0; j < trainingList.size(); j++) {
+            System.out.println(trainingList.get(j));
+        }
+
+    }
 
     @Override
     public void saveData(String[] userInputArray) throws Exception {
@@ -65,6 +71,15 @@ public class PTTModel extends AbstractModel<PTTModel>{
         List<PTTModel> list = new ArrayList<>();
         list.add(model);
         DataImpl.saveData(list);
+    }
+
+    public static void printPTTinfo() throws Exception {
+        PTTModel pModel = new PTTModel();
+        List<CourseModel> pData = DataImpl.loadData(pData.getClass());
+
+        for (PTTModel p : pData) {
+            p.print();
+        }
     }
 
     @Override
@@ -77,9 +92,7 @@ public class PTTModel extends AbstractModel<PTTModel>{
             trainingList.add(userInputArray[i]);
         }
 
-
         PTTModel req = new PTTModel(num, id, trainingList);
-
         return req;
     }
 }

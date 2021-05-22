@@ -51,7 +51,11 @@ public class Main {
                     APPConsole.writeLine("loading course data...");
                     CourseModel.printCourse();
                     APPConsole.writeLine("Finished");
-
+                case "G":
+                    // read Teacher List
+                    APPConsole.writeLine("loading teacher data...");
+                    PTTModel.printPTTinfo();
+                    APPConsole.writeLine("Finished");
                     break;
                 case "I":
                     // TrainingModel.add()

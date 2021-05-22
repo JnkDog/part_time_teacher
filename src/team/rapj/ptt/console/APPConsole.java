@@ -41,7 +41,7 @@ public class APPConsole {
         writeLine("# C.      Input Part-time teachers' Information");
         writeLine("# D.      View Training Requirements");
         writeLine("# F       View Course List");
-        writeLine("# G       View Information List");
+        writeLine("# G       View Teacher List");
         writeLine("# E.      EXIT");
         writeLine("Please input A, B, C, D, F or E");
     }
