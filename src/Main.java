@@ -19,7 +19,7 @@ public class Main {
                 case "A":
                     // get Course requirement info
                     // RequirementModel.input();
-                    APPConsole.writeLine("Input Format: Num, Requirement");
+                    APPConsole.writeLine("Input Format: Teacher Number, Requirement");
                     String[] userInputArray = APPConsole.splitUserInput();
                     AbstractModel model = new RequirementModel();
                     model.saveData(userInputArray);

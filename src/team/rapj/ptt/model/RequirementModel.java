@@ -3,61 +3,47 @@ package team.rapj.ptt.model;
 import team.rapj.ptt.dao.DataImpl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class RequirementModel extends AbstractModel<RequirementModel> {
-    private String req;
-    private int num;
+    private String[] requirements;
+    private int number;
 
     public RequirementModel() {
-
     }
 
-    public RequirementModel(int a, String b) {
-        num = a;
-        req = b;
+    public RequirementModel(int a, String[] b) {
+        number = a;
+        requirements = b;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public int getNumber() {
+        return number;
     }
 
-    public void setReq(String req) {
-        this.req = req;
+    public String[] getRequirements() {
+        return requirements;
     }
 
-    public int getNum() {
-        return num;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
-    public String getReq() {
-        return req;
+    public void setRequirements(String[] requirements) {
+        this.requirements = requirements;
     }
 
     public void print() {
-        System.out.println("Need"+getNum()+"teachers.");
-        System.out.println("Requirement:"+getReq());
-    }
-
-
-
-
-    public static void input() throws Exception {
-//        APPConsole.writeLine("Input Format: Num, Requirement");
-//        Scanner scanner1 = new Scanner(System.in);
-//        String t = scanner1.next();
-//        String[] input = t.split(",");
-//        int a = Integer.parseInt(input[0]);
-//        RequirementModel req = new RequirementModel(a,input[1]);
-//        List<RequirementModel> list = new ArrayList<>();
-//        list.add(req);
-//        DataImpl.saveData(list);
+        System.out.println("Need " + getNumber() + " teachers.");
+        System.out.println("Requirement: " + getRequirements().toString());
     }
 
     @Override
     public RequirementModel stringToModel(String[] userInputArray) {
-        int num = Integer.parseInt(userInputArray[0]);
-        RequirementModel req = new RequirementModel(num, userInputArray[1]);
+        int number = Integer.parseInt(userInputArray[0].strip());
+        String[] requirements = Arrays.copyOfRange(userInputArray, 1, userInputArray.length);
+        RequirementModel req = new RequirementModel(number, requirements);
 
         return req;
     }
