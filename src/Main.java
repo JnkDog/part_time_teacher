@@ -26,7 +26,7 @@ public class Main {
                     break;
                 case "B":
                     // get training info// 测试CourseModel
-                    APPConsole.writeLine("Input Format: CourseName, Requirement");
+                    APPConsole.writeLine("Input Format: CourseName, Num, Requirement");
                     String[] userInputC = APPConsole.splitUserInput();
                     AbstractModel modelC = new CourseModel();
                     modelC.saveData(userInputC);

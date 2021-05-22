@@ -12,7 +12,7 @@ public class CourseModel extends AbstractModel<CourseModel> {
     private List<RequirementModel> reqList;
 
     public CourseModel () {
-        
+
     }
 
     public CourseModel (String n, List<RequirementModel> reqlist) {
@@ -51,7 +51,7 @@ public class CourseModel extends AbstractModel<CourseModel> {
     public CourseModel stringToModel(String[] userInputArray) {
         String[] input = Arrays.copyOfRange(userInputArray, 1, userInputArray.length);
         RequirementModel a = new RequirementModel();
-        a.stringToModel(input);
+        a = a.stringToModel(input);
         List<RequirementModel> list = new ArrayList<>();
         list.add(a);
         CourseModel model = new CourseModel(userInputArray[0], list);
