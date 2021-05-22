@@ -36,7 +36,7 @@ public class RequirementModel extends AbstractModel<RequirementModel> {
 
     public void print() {
         System.out.println("Need " + getNumber() + " teachers.");
-        System.out.println("Requirements: " + getRequirements().toString());
+        System.out.println("Requirements: " + Arrays.toString(getRequirements()));
     }
 
     @Override
@@ -56,12 +56,12 @@ public class RequirementModel extends AbstractModel<RequirementModel> {
         DataImpl.saveData(list);
     }
 
-    public void printData() throws Exception {
+    public static void printData() throws Exception {
         System.out.println("Loading Data:");
-        RequirementModel reqClass = new RequirementModel();
-        List<RequirementModel> reqData = DataImpl.loadData(reqClass.getClass());
-        for (int i = 0;i<reqData.size();i++) {
-            reqData.get(i).print();
+        RequirementModel requirementClass = new RequirementModel();
+        List<RequirementModel> requirementData = DataImpl.loadData(requirementClass.getClass());
+        for (int i = 0;i<requirementData.size();i++) {
+            requirementData.get(i).print();
         }
         System.out.println("Finished");
     }

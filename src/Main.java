@@ -40,6 +40,12 @@ public class Main {
                     modelPTT.saveData(userInputArr);
 
                     break;
+                case "D":
+                    APPConsole.writeLine("Loading requirement data...");
+                    RequirementModel.printData();
+                    APPConsole.writeLine("Finished");
+
+                    break;
                 case "I":
                     // TrainingModel.add()
                     // Training....

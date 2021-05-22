@@ -39,8 +39,9 @@ public class APPConsole {
         writeLine("# A.      Input Course Requirement");
         writeLine("# B.      View Part-time teachers Training");
         writeLine("# C.      View Part-time teachers' Information");
+        writeLine("# D.      View Course Requirements");
         writeLine("# E.      EXIT");
-        writeLine("Please input A, B or E");
+        writeLine("Please input A, B, C, D or E");
     }
 
     public static void main(String[] args) {
