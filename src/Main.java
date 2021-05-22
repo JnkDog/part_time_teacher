@@ -27,14 +27,14 @@ public class Main {
                     break;
                 case "B":
                     // get training info// 测试CourseModel
-                    APPConsole.writeLine("Input Format: CourseName, Num, Requirement");
+                    APPConsole.writeLine("Input Format: CourseName, Number, Requirement");
                     String[] userInputC = APPConsole.splitUserInput();
                     AbstractModel modelC = new CourseModel();
                     modelC.saveData(userInputC);
                     
                     break;
                 case "C":
-                    APPConsole.writeLine("Input Format: Name, TeacherID, ...TrainingList");
+                    APPConsole.writeLine("Input Format: Name, Teacher's ID, Training List");
                     String[] userInputArr = APPConsole.splitUserInput();
                     AbstractModel modelPTT = new PTTModel();
                     modelPTT.saveData(userInputArr);

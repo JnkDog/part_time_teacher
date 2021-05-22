@@ -38,6 +38,7 @@ public class APPConsole {
         writeLine("#         Case-insensitive        #");
         writeLine("# A.      Input Course Requirement");
         writeLine("# B.      View Part-time teachers Training");
+        writeLine("# C.      View Part-time teachers' Information");
         writeLine("# E.      EXIT");
         writeLine("Please input A, B or E");
     }
