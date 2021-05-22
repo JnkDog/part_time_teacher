@@ -6,7 +6,7 @@ import team.rapj.ptt.model.*;
 /**
  * Main function
  *
- * @author Kuihong Chen
+ * @author Teams
  */
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -41,44 +41,24 @@ public class Main {
 
                     break;
                 case "D":
-                    APPConsole.writeLine("Loading requirement data...");
+                    APPConsole.writeLine("# Loading requirement data...");
                     RequirementModel.printData();
-                    APPConsole.writeLine("Finished");
+                    APPConsole.writeLine("# Load over ......");
 
                     break;
                 case "F":
                 // read Course Data
-                    APPConsole.writeLine("loading course data...");
+                    APPConsole.writeLine("# loading course data...");
                     CourseModel.printCourse();
-                    APPConsole.writeLine("Finished");
+                    APPConsole.writeLine("# Load over ......");
+
+                    break;
                 case "G":
                     // read Teacher List
-                    APPConsole.writeLine("loading teacher data...");
+                    APPConsole.writeLine("# loading teacher data...");
                     PTTModel.printPTTinfo();
-                    APPConsole.writeLine("Finished");
-                    break;
-                case "I":
-                    // TrainingModel.add()
-                    // Training....
-                    // input 一行输入 然后 save一行
-                    // Model string to model
-                    // interface
-                    // Model --> save()
-                    // console输入样式
-                    // 不要都写在这一个操作符下面
-                    // 自己另外case操作符号！！！
-                    //  a, bbb,  bbbb,  String.split(",")  ->  String[] for a-> name  bbb -> trainingList
-//                     new Training(name, trainingList)  -> save
-                    APPConsole.writeLine("Input Format");
-                    // 这里的scanner是用来读用户输入数据的字符串，别和上面那个读操作的scanner搞混了
-                    Scanner scanner1 = new Scanner(System.in);
-                    // 读入的用户输入的数据，如果你想要hard一下，目测可以循环读取用户输入，然后字符串加下去
-                    // 这样就实现了多行输入数据
-                    String t = scanner1.next();
-                    //  ---- 需要完成的工作  -----
-                    // 根据读入的字符串转化成对应的model～，然后塞入我的保存api
-                    // 如果无BUG 估计就好了
-                    // t.split(",");
+                    APPConsole.writeLine("# Load over ......");
+
                     break;
                 case "E":
                     // TBD test

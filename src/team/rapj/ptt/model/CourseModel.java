@@ -70,7 +70,7 @@ public class CourseModel extends AbstractModel<CourseModel> {
 
     public static void printCourse() throws Exception {
         CourseModel cModel = new CourseModel();
-        List<CourseModel> cData = DataImpl.loadData(cData.getClass());
+        List<CourseModel> cData = DataImpl.loadData(cModel.getClass());
         
         for (CourseModel c : cData) {
             c.print();

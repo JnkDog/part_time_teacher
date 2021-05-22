@@ -5,9 +5,6 @@ import team.rapj.ptt.dao.DataImpl;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author
- */
 public class PTTModel extends AbstractModel<PTTModel>{
     private String name;
     private String teacherID;
@@ -46,19 +43,11 @@ public class PTTModel extends AbstractModel<PTTModel>{
         this.trainingList = trainingList;
     }
 
-//    public static PTTModel input() throws Exception {
-//        Scanner scanner1 = new Scanner(System.in);
-//        String t = scanner1.next();
-//        String[] input = t.split(",");
-//        String name = input [0];
-//        String teacherID = input[1];
-//
-//        PTTModel ptt = new PTTModel(name, teacherID);
-//        return ptt;
-//    }
-
     public void print(){
-        System.out.println(name + " " + teacherID);
+        System.out.println("The teacher name is " + name + "\n" +
+                "ID: " + teacherID);
+        System.out.println("Training List: ");
+
         for (int j = 0; j < trainingList.size(); j++) {
             System.out.println(trainingList.get(j));
         }
@@ -75,7 +64,7 @@ public class PTTModel extends AbstractModel<PTTModel>{
 
     public static void printPTTinfo() throws Exception {
         PTTModel pModel = new PTTModel();
-        List<CourseModel> pData = DataImpl.loadData(pData.getClass());
+        List<PTTModel> pData = DataImpl.loadData(pModel.getClass());
 
         for (PTTModel p : pData) {
             p.print();

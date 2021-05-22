@@ -17,6 +17,11 @@ import java.util.List;
 public class DataImpl extends BaseConnection {
     public static <T> List<T> loadData(Class clazz) throws Exception {
         String readContent = readContent();
+        // if the data is null, return null list.
+        if (readContent.equals("")) {
+            return new ArrayList<>();
+        }
+
         JSONObject jo = JSONObject.parseObject(readContent);
         String filter = getClassName(clazz);
         JSONArray filterJArray = (JSONArray) jo.get(filter);
