@@ -8,7 +8,6 @@ import java.io.File;
  * @author Kuihong Chen
  */
 public class BaseConnection {
-//    private static String SAVE_PATH = "./";
     private static String FILE_NAME = "newtest.json";
 
     public static File connect() {

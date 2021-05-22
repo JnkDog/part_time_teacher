@@ -23,6 +23,7 @@ public class Main {
                     String[] userInputArray = APPConsole.splitUserInput();
                     AbstractModel model = new RequirementModel();
                     model.saveData(userInputArray);
+
                     break;
                 case "B":
                     // get training info// 测试CourseModel
@@ -37,6 +38,7 @@ public class Main {
                     String[] userInputArr = APPConsole.splitUserInput();
                     AbstractModel modelPTT = new PTTModel();
                     modelPTT.saveData(userInputArr);
+
                     break;
                 case "I":
                     // TrainingModel.add()

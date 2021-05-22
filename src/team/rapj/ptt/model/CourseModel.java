@@ -5,8 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import team.rapj.ptt.dao.DataImpl;
-import team.rapj.ptt.model.AbstractModel;
 
+/**
+ * @author
+ */
 public class CourseModel extends AbstractModel<CourseModel> {
     private String courseName;
     private List<RequirementModel> reqList;
@@ -23,26 +25,26 @@ public class CourseModel extends AbstractModel<CourseModel> {
         }
     }
 
-    public String getName() {
+    public String getCourseName() {
         return courseName;
     }
 
-    public void setName(String name) {
-        this.courseName = name;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
-    public List<RequirementModel> getList() {
+    public List<RequirementModel> getRequirementList() {
         return reqList;
     }
 
-    public void setList(List<RequirementModel> list) {
+    public void setRequirementList(List<RequirementModel> list) {
         this.reqList = list;
     }
 
     public void print() {
-        System.out.println("CourseName: " + getName());
+        System.out.println("CourseName: " + getCourseName());
         System.out.println("Now we have these requirement: ");
-        for (RequirementModel m : this.getList()) {
+        for (RequirementModel m : this.getRequirementList()) {
             m.print();
         }
     }
