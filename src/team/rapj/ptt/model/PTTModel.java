@@ -34,6 +34,18 @@ public class PTTModel extends AbstractModel<PTTModel>{
         return trainingList;
     }
 
+    public void setTeacherID(String id) {
+        this.teacherID = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setList(List<String> trainingList) {
+        this.trainingList = trainingList;
+    }
+
 //    public static PTTModel input() throws Exception {
 //        Scanner scanner1 = new Scanner(System.in);
 //        String t = scanner1.next();
