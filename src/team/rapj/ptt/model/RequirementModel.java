@@ -40,6 +40,8 @@ public class RequirementModel extends AbstractModel<RequirementModel> {
     }
 
 
+
+
     public static void input() throws Exception {
 //        APPConsole.writeLine("Input Format: Num, Requirement");
 //        Scanner scanner1 = new Scanner(System.in);
@@ -67,4 +69,16 @@ public class RequirementModel extends AbstractModel<RequirementModel> {
         list.add(model);
         DataImpl.saveData(list);
     }
+
+    public void printData() throws Exception {
+        System.out.println("Loading Data:");
+        RequirementModel reqClass = new RequirementModel();
+        List<RequirementModel> reqData = DataImpl.loadData(reqClass.getClass());
+        for (int i = 0;i<reqData.size();i++) {
+            reqData.get(i).print();
+        }
+        System.out.println("Finished");
+    }
+
+
 }
