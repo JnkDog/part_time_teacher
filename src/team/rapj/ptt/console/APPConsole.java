@@ -36,11 +36,11 @@ public class APPConsole {
 
     public static void hint() {
         writeLine("#         Case-insensitive        #");
-        writeLine("# A.      Input Course Requirement");
-        writeLine("# B.      Input Part-time teachers Training");
+        writeLine("# A.      Input Training Requirement");
+        writeLine("# B.      Input Course information");
         writeLine("# C.      Input Part-time teachers' Information");
-        writeLine("# D.      View Course Requirements");
-        writeLine("# F       View Training List");    
+        writeLine("# D.      View Training Requirements");
+        writeLine("# F       View Course List");    
         writeLine("# E.      EXIT");
         writeLine("Please input A, B, C, D, F or E");
     }

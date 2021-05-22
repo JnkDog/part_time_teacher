@@ -57,13 +57,11 @@ public class RequirementModel extends AbstractModel<RequirementModel> {
     }
 
     public static void printData() throws Exception {
-        System.out.println("Loading Data:");
         RequirementModel requirementClass = new RequirementModel();
         List<RequirementModel> requirementData = DataImpl.loadData(requirementClass.getClass());
         for (int i = 0;i<requirementData.size();i++) {
             requirementData.get(i).print();
         }
-        System.out.println("Finished");
     }
 
 
