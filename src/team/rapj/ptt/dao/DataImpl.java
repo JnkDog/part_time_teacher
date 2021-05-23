@@ -124,6 +124,10 @@ public class DataImpl extends BaseConnection {
     }
 
     private static String getClassName(Class clazz) {
+        /**
+         *  Old jdk may not support this getPackageName(),
+         *  it can be replaced by getName()
+         */
         int beginIdx = clazz.getPackageName().length() + 1;
         int endIdx = clazz.getTypeName().length();
         String filter = clazz.getTypeName().substring(beginIdx, endIdx);

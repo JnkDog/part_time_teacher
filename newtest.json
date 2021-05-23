@@ -1,1 +1,8 @@
-{"CourseModel":[{"courseName":"os","requirementList":[{"number":5,"requirements":[" sdrsdrs","sdsa '"]}]}],"PTTModel":[{"teacherID":" 3wdc","name":"jam","trainingList":[" derf","tvtvasdds"]}],"RequirementModel":[{"number":55555,"requirements":[" os"," QAQ"]}]}
+{
+  "CourseModel":
+    [{"courseName":"math",
+      "requirementList": [{"number":5,"requirements":["1 lecture and 2 lab"]}]
+    }],
+  "PTTModel":[{"teacherID":"1234","name":"lucy","trainingList":["math","chemistry"]}],
+  "RequirementModel":[{"number":5,"requirements":["1 lecture and 2 lab"]}]
+}
